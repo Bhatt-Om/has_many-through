@@ -1,0 +1,6 @@
+<%= form_with model: @patient do |f| %>
+  <%= f.label :name, "Name: " %>
+  <%= f.text_field :name %>
+
+  <%= f.submit %>
+<% end %>

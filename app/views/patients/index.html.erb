@@ -1,0 +1,23 @@
+<h1>Patients#index</h1>
+<p>Find me in app/views/patients/index.html.erb</p>
+
+<%= link_to "[ Create New Patient ]", new_patient_path %>
+<table>
+  <thead>
+    <tr>
+      <th><h3>Name</h3></th>
+      <th colspan= "3"><h3>Action</h3></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @patients.each do |patient| %>
+    <tr>
+        <td><%= patient.name %></td>
+        <td><%= link_to "[ Show ]", patient_path(patient) %></td>
+        <td><%= link_to "[ Edit ]", edit_patient_path(patient) %></td>
+        <td><%= link_to "[ Delete ]", patient_path(patient), data: { turbo_method: :delete , turbo_confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

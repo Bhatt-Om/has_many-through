@@ -1,0 +1,8 @@
+<%= form_with model: @appointment do |f| %>
+  <%= f.label :appointment  %>
+  <%= f.collection_select :doctor_id, Doctor.order(:name), :id, :name %>
+  <%= f.collection_select :patient_id, Patient.order(:name), :id, :name %>
+  <%= f.datetime_field :appointment_date %>
+
+  <%= f.submit  %>
+<% end %>
